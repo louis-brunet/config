@@ -19,7 +19,7 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "New tmux session" })
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "New tmux session (tmux-sessionizer)" })
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format current buffer" })
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
@@ -30,4 +30,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.cmd("tnoremap <Esc> <C-\\><C-n>")
 
 vim.keymap.set("n", "<C-w>Q", vim.cmd.tabclose, { desc = "Close current tab" })
+vim.keymap.set("n", "<A-l>", vim.cmd.tabnext, { desc = "Next tab" })
+vim.keymap.set("n", "<A-h>", vim.cmd.tabprevious, { desc = "Previous tab" })
 
