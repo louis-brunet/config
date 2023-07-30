@@ -439,8 +439,15 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
   -- tsserver = {},
+  rust_analyzer = {
+    ["rust-analyzer"] = {
+      check = {
+        -- command = "clippy",
+        overrideCommand = { "cargo", "clippy", "--workspace", "--message-format=json", "--all-targets", "--", "-A", "clippy::needless_return", },
+      },
+    },
+  },
 
   lua_ls = {
     Lua = {
