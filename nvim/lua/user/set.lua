@@ -2,6 +2,9 @@
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+vim.cmd.highlight("CursorLineNr cterm=bold ctermbg=15 ctermfg=8 guifg=#ccbb44")
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
