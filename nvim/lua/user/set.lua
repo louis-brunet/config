@@ -5,6 +5,11 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.cmd.highlight("CursorLineNr cterm=bold ctermbg=15 ctermfg=8 guifg=#ccbb44")
+vim.cmd.highlight("DiagnosticVirtualTextError guibg=none")
+vim.cmd.highlight("DiagnosticVirtualTextWarn guibg=none")
+vim.cmd.highlight("DiagnosticVirtualTextInfo guibg=none")
+vim.cmd.highlight("DiagnosticVirtualTextHint guibg=none")
+vim.cmd.highlight("DiagnosticVirtualTextOk guibg=none")
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
