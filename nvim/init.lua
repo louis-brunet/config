@@ -101,7 +101,10 @@ require('lazy').setup({
         priority = 1000,
         config = function()
             require('onedark').setup({
-                -- transparent = true,
+                transparent = true,
+                lualine = {
+                    transparent = true,
+                },
             })
             vim.cmd.colorscheme 'onedark'
         end,
@@ -397,6 +400,13 @@ local on_attach = function(_, bufnr)
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
         vim.lsp.buf.format()
     end, { desc = 'Format current buffer with LSP' })
+
+
+    -- Create an autocommand to highlight hovered word
+    local highlight_augroup = vim.api.nvim_create_augroup("LspDocumentHighlightGroup", { clear = true })
+    vim.api.nvim_create_autocmd("CursorHold", { callback = vim.lsp.buf.document_highlight, group = highlight_augroup })
+    vim.api.nvim_create_autocmd("CursorHoldI", { callback = vim.lsp.buf.document_highlight, group = highlight_augroup })
+    vim.api.nvim_create_autocmd("CursorMoved", { callback = vim.lsp.buf.clear_references, group = highlight_augroup })
 end
 
 -- Enable the following language servers

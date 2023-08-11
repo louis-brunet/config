@@ -28,9 +28,12 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-vim.cmd("tnoremap <Esc> <C-\\><C-n>") -- exit terminal mode
+-- exit terminal mode with Esc
+vim.cmd("tnoremap <Esc> <C-\\><C-n>")
 
 vim.keymap.set("n", "<C-w>Q", vim.cmd.tabclose, { desc = "Close current tab" })
 vim.keymap.set("n", "<A-l>", vim.cmd.tabnext, { desc = "Next tab" })
 vim.keymap.set("n", "<A-h>", vim.cmd.tabprevious, { desc = "Previous tab" })
 
+-- toggle transparent background
+vim.keymap.set({"n", "v"}, "<leader>t", vim.cmd.TransparentToggle, { desc = "Toggle transparent background" })
