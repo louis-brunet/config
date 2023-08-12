@@ -179,3 +179,8 @@ alias tmux="TERM=xterm-256color tmux"
 
 export PATH="$HOME/.local/scripts:$PATH"
 
+
+# open tmux-sessionizer with Ctrl-F
+bindkey -s "^F" 'tmux-sessionizer^M'
+
+
